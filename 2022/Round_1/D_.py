@@ -1,3 +1,4 @@
+
 class Solution:
     def process_input(self, file_path):
         with open(file_path, 'r') as file:
@@ -23,7 +24,7 @@ class Solution:
 
     def add_output(self, file_path, to_write):
         with open(file_path, 'a') as file:
-            file.write(f'{to_write}\n')
+            file.write(f"{to_write}\ n")
             
         
     @staticmethod

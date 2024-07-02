@@ -1,3 +1,22 @@
+import os
+
+def create_folders_and_files(folder_names, file_names, code):
+    current_directory = os.getcwd()
+    
+    for folder in folder_names:
+        folder_path = os.path.join(current_directory, folder)
+        os.makedirs(folder_path, exist_ok=True)
+        
+    for file in file_names:
+        with open(file, 'w') as f:
+            f.write(code)
+    
+    print("Folders and files created successfully.")
+
+
+folder_names = ['data', 'outputs']
+file_names = ['A_.py', 'B_.py', 'C_.py', 'D_.py', 'E_.py']
+code = """
 class Solution:
     def process_input(self, file_path):
         with open(file_path, 'r') as file:
@@ -23,7 +42,7 @@ class Solution:
 
     def add_output(self, file_path, to_write):
         with open(file_path, 'a') as file:
-            file.write(f'{to_write}\n')
+            file.write(f"{to_write}\ n")
             
         
     @staticmethod
@@ -38,3 +57,6 @@ class Solution:
 
 sol = Solution()
 sol.process_input('./data/___.txt')
+"""
+
+create_folders_and_files(folder_names, file_names, code)
