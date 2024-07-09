@@ -39,8 +39,8 @@ class Solution:
             else:
                 self.add_output('outputs/___.txt', f"Case #{n+1}: NO")
 
-
-    def add_output(self, file_path, to_write):
+    @staticmethod
+    def add_output(file_path, to_write):
         with open(file_path, 'a') as file:
             file.write(f"{to_write}\ n")
             
